@@ -18,10 +18,8 @@ h1,h2,p{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: beige;
 
-    /* max-width: 75ch;
-    text-align: center; */
-    /* overflow: hidden;
-    max-width: 600px;
+    /* max-width: 50spx;
+    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; */
 }
@@ -37,3 +35,27 @@ h1{
     border-radius: 50%;
     border: 10px solid beige;
 }
+
+
+figure{
+    display: inline-block;
+}
+
+figcaption{
+    text-align: center;
+    color: beige;
+}
+
+img{
+    background-color: beige;
+}
+
+
+#c4Id{
+    border-radius: 25px;
+}
+
+
+/* #linkedDiv{
+    text-align: center;
+} */
