@@ -2,6 +2,7 @@ const board = document.getElementById('boardId');
 const textbox = document.getElementById('youWinId');
 const chipsMsg = document.getElementById('chipsMsgId');
 const titleId = document.getElementById('titleId');
+const whosTurn = document.getElementById('turnId');
 
 const winningArr = [
     [0, 1, 2, 3], [41, 40, 39, 38], [7, 8, 9, 10],
@@ -48,7 +49,16 @@ let result = false;
 let blackArray = [];
 let redArray = [];
 
+let redsTurn = true;
+let blacksTurn = true;
+
+const directions = () => {
+
+}
+
 const build = () => {
+
+    whosTurn.innerHTML = "Reds turn"
 
     let chipsLeft = 42;
 
@@ -80,20 +90,26 @@ const build = () => {
 
             ////This if statement makes it so that a slot can only be filled if the one below it is filled.
             if ((pos == "bottom" || document.getElementById(i + 7).getAttribute("filled") == "true") && chipsLeft > 0) {
+                
+
                 disc.style.display = "block";
                 slot.setAttribute("filled", "true");
                 turn++;
                 chipsLeft--;
                 if(turn % 2 == 0){
+                    
                     disc.classList.add('blackClass');
                     slot.classList.add('blackSlot');
                     blackArray.push(i);
+                    //redsTurn = true;
 
                 }
                 else{
+
                     disc.classList.add('redClass');
                     slot.classList.add('redSlot');
                     redArray.push(i);
+                    //redsTurn = false;
                 }
             }
 

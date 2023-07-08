@@ -59,6 +59,10 @@ body{
     /* display: inline-block; */
 }
 
+.turnClass{
+    text-align: right;
+}
+
 .blackClass{
     background-color: black;
 }
