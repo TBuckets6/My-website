@@ -49,7 +49,7 @@ let result = false;
 let blackArray = [];
 let redArray = [];
 
-let redsTurn = true;
+let redsTurn = false;
 let blacksTurn = true;
 
 const directions = () => {
@@ -58,13 +58,14 @@ const directions = () => {
 
 const build = () => {
 
-    whosTurn.innerHTML = "Reds turn"
+    
+    //whosTurn.innerHTML = "Reds turn"
 
     let chipsLeft = 42;
 
     for (let i = 0; i < 49; i++) {
         const slot = document.createElement('div');
-
+        
         let pos = "";
 
         if (i >= 42 && i <= 48) {
@@ -92,24 +93,31 @@ const build = () => {
             if ((pos == "bottom" || document.getElementById(i + 7).getAttribute("filled") == "true") && chipsLeft > 0) {
                 
 
-                disc.style.display = "block";
-                slot.setAttribute("filled", "true");
-                turn++;
-                chipsLeft--;
-                if(turn % 2 == 0){
+                // disc.style.display = "block";
+                // slot.setAttribute("filled", "true");
+                // turn++;
+                // chipsLeft--;
+                if(turn % 2 == 0 && document.getElementById(i).getAttribute("filled") != "true"){
                     
                     disc.classList.add('blackClass');
                     slot.classList.add('blackSlot');
                     blackArray.push(i);
-                    //redsTurn = true;
-
+                    redsTurn = true;
+                    disc.style.display = "block";
+                    slot.setAttribute("filled", "true");
+                    turn++;
+                    chipsLeft--;
                 }
-                else{
+                else if(turn % 2 != 0 && document.getElementById(i).getAttribute("filled") != "true"){
 
                     disc.classList.add('redClass');
                     slot.classList.add('redSlot');
                     redArray.push(i);
-                    //redsTurn = false;
+                    disc.style.display = "block";
+                    slot.setAttribute("filled", "true");
+                    turn++;
+                    chipsLeft--;
+                    redsTurn = false;
                 }
             }
 
