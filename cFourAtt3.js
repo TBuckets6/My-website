@@ -9,6 +9,8 @@ const modal = document.getElementById('modalId');
 const helpBtn = document.getElementById('helpButton');
 const resetBtn = document.getElementById('resetBtn');
 
+let flag = 0;
+
 // REPLACED ALL BLACK VARIABLES WITH YELLOW FOR JS AND CSS
 
 const winningArr = [
@@ -149,13 +151,28 @@ const build = () => {
                 let yellowHasWon = winningArr[i].every(e => yellowArray.includes(e))
 
                 if (redHasWon == true) {
-                    textbox.innerHTML = "Red Wins!"
+                    whosTurn.innerHTML = "Red Wins!"
+                    whosTurn.style.color = "red";
+                    flag = -1;
+                    // setTimeout(() => {
+                    //     console.log("Delayed for 1 second.");
+                    //   }, 3000);
+                    //window.location.reload();
                 }
 
                 if (yellowHasWon == true) {
-                    textbox.innerHTML = "yellow wins!"
+                    whosTurn.innerHTML = "yellow wins!"
+                    whosTurn.style.color = "yellow"
+                    flag = -1;
+                    // setTimeout(() => {
+                    //     console.log("Delayed for 1 second.");
+                    //   }, 3000);
+                    //window.location.reload();
+                    
                 }
             }
+
+            
 
         })
 
