@@ -3,6 +3,10 @@ const textbox = document.getElementById('youWinId');
 const chipsMsg = document.getElementById('chipsMsgId');
 const titleId = document.getElementById('titleId');
 const whosTurn = document.getElementById('turnId');
+const modal = document.getElementById('modalId');
+const helpBtn = document.getElementById('helpButton');
+const resetBtn = document.getElementById('resetBtn');
+let flag = 0;
 
 const winningArr = [
     [0, 1, 2, 3], [41, 40, 39, 38], [7, 8, 9, 10],
@@ -43,23 +47,27 @@ const reset = () => {
 
 }
 
+
+
 let turn = 0;
 let result = false;
 
-let blackArray = [];
+let yellowArray = [];
 let redArray = [];
 
 let redsTurn = false;
-let blacksTurn = true;
+let yellowsTurn = true;
 
-const directions = () => {
 
+
+        const directions = () => {
 }
 
 const build = () => {
 
     
-    //whosTurn.innerHTML = "Reds turn"
+    whosTurn.innerHTML = "Yellow's turn"
+    whosTurn.classList.add('yellowsTurn');
 
     let chipsLeft = 42;
 
@@ -91,25 +99,27 @@ const build = () => {
 
             ////This if statement makes it so that a slot can only be filled if the one below it is filled.
             if ((pos == "bottom" || document.getElementById(i + 7).getAttribute("filled") == "true") && chipsLeft > 0) {
-                
-
-                // disc.style.display = "block";
-                // slot.setAttribute("filled", "true");
-                // turn++;
-                // chipsLeft--;
+                //if it is yellows turn (turn is set to an even number) AND the current slot isnt filled
                 if(turn % 2 == 0 && document.getElementById(i).getAttribute("filled") != "true"){
-                    
-                    disc.classList.add('blackClass');
-                    slot.classList.add('blackSlot');
-                    blackArray.push(i);
-                    redsTurn = true;
+                    whosTurn.innerHTML = "Red's Turn"
+                    whosTurn.classList.add('redsTurn');
+                    whosTurn.classList.remove('yellowsTurn');
+                    //add yellow class to the chosen spot
+                    disc.classList.add('yellowClass');
+                    // add yellow slot class to the chosen spot
+                    slot.classList.add('yellowSlot');
+                    //push the number representing the slot onto the yellow array
+                    yellowArray.push(i);
+                    //redsTurn = true; don't think this in needed
                     disc.style.display = "block";
                     slot.setAttribute("filled", "true");
                     turn++;
                     chipsLeft--;
                 }
                 else if(turn % 2 != 0 && document.getElementById(i).getAttribute("filled") != "true"){
-
+                    whosTurn.innerHTML = "Yellow's Turn"
+                    whosTurn.classList.add('yellowsTurn');
+                    whosTurn.classList.remove('redsTurn');
                     disc.classList.add('redClass');
                     slot.classList.add('redSlot');
                     redArray.push(i);
@@ -125,21 +135,37 @@ const build = () => {
             for (let i = 0; i < winningArr.length; i++) {
 
                 let redHasWon = winningArr[i].every(e => redArray.includes(e))
-                let blackHasWon = winningArr[i].every(e => blackArray.includes(e))
+                let yellowHasWon = winningArr[i].every(e => yellowArray.includes(e))
 
                 if (redHasWon == true) {
                     textbox.innerHTML = "Red Wins!"
                 }
 
-                if (blackHasWon == true) {
-                    textbox.innerHTML = "Black wins!"
+                if (yellowHasWon == true) {
+                    textbox.innerHTML = "yellow wins!"
                 }
             }
 
         })
 
+        helpBtn.addEventListener("click", () => {
+            modal.style.display = "block";
+        })
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        })
+                
+        resetBtn.addEventListener("click", () => {
+            window.location.reload();
+        })
+
     }
+
+
 
 }
 
+
 build();
+
