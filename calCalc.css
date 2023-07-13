@@ -1,0 +1,10 @@
+/* .content{
+    position: absolute;
+    left: 150px;
+} */
+
+#bodyId{
+    position: absolute;
+    left: 150px;
+    top: 150px;
+}
