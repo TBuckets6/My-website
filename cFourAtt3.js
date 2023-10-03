@@ -129,7 +129,7 @@ const build = () => {
                 else if(turn % 2 != 0 && document.getElementById(i).getAttribute("filled") != "true"){
 
                     //NEW
-                    whosTurn.innerHTML = "yellows turn"
+                    whosTurn.innerHTML = "Yellow's turn"
                     whosTurn.classList.add('yellowsTurn')
                     whosTurn.classList.remove('redsTurn')
 
