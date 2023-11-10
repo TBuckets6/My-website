@@ -29,10 +29,22 @@ upload.addEventListener('change', () => {
                         }
                         break
                     }
-                    content.innerHTML += fr.result.charCodeAt(j).toString(16).toUpperCase().padStart(2,'0') + ' '
-                    
+                    content.innerHTML += fr.result.charCodeAt(j).toString(16).toUpperCase().padStart(2,'0') + ' ' 
                 }
-                content.innerHTML += '|' + fr.result.substring(start,end) + '|'
+                content.innerHTML += '|'
+                for(let j = start; j < end; j++){
+                    if(fr.result[j] == undefined){
+                        break
+                    }
+                    if(fr.result[j].charCodeAt() >= 32 && fr.result[j].charCodeAt() <= 126){
+                        content.innerHTML += fr.result[j]
+                    }
+                    else{
+                        content.innerHTML += '.'
+                    }
+                }
+                content.innerHTML += '|'
+                //content.innerHTML += '|' + fr.result.substring(start,end) + '|'
                 content.innerHTML += '<br/>'
                 start = start + 16
                 end = end + 16
