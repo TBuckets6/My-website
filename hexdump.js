@@ -19,53 +19,62 @@ upload.addEventListener('change', () => {
         let start = 0
         let end = 16
 
-        for(let i = 0; i < fr.result.length; i++){
+        //let data = fr.result
+        
+        //const hex = fr.result.split('').map((x) => x.charCodeAt().toString(16)).join('') // or .join(' ')
+
+        //function to determine if a character is printable ascii
+        const determinePrintableAscii = (d) => {
+            let content =''
+            for(let i = 0; i < d.length; i++){
+                if(d[i].charCodeAt() >= 32 && d[i].charCodeAt() <= 126){
+                    content += d[i]
+                }
+                else{
+                    content += '.'
+                }
+            }
+            return content
+        }
+
+        const data = determinePrintableAscii(fr.result)
+
+        for(let i = 0; i < data.length; i++){
+
             if(i % 16 == 0){
-                
+
                 //print the hex offset with leading zeros
                 content.innerHTML += i.toString(16).padStart(8,'0') + '  '
-                let line = 0;               
-                for(let j = start; j < end; j++){
-                    line++
-                    if(fr.result[j] == undefined){
-                        for(let k = 0; k < 58 - (line * 2) - 6 - line - 1; k++){
-                            content.innerHTML += ' '                       
-                        }
-                        break
-                    }
-                    if(fr.result.charCodeAt(j) < 127){
-                        //console.log('hi')
-                        content.innerHTML += fr.result.charCodeAt(j).toString(16).padStart(2,'0') + ' '    
+
+                //content.innerHTML += hex.slice(i,i+32) + ' '
+
+                for(let j = i; j < i + 16; j++){
+                    if(data[j]){
+                        //print hex values of data
+                        content.innerHTML += data.charCodeAt(j).toString(16).padStart(2,'0') + ' '
                     }
                     else{
-                        console.log('hi')
-                        //content.innerHTML += fr.result.charCodeAt(j).toString(16).toUpperCase() + ' '
-                        content.innerHTML += fr.result.charCodeAt(j).toString(16) + ' '
-                    }
-                     
-                }
-                content.innerHTML += '|'
-                for(let j = start; j < end; j++){
-                    if(fr.result[j] == undefined){
+                        console.log(j % 16)
+                        //since the final line doesnt have a full 16 characters this creates
+                        //the necessary whitespace to align the file content with all content 
+                        //above it
+                        content.innerHTML += ' '.repeat(58 - 10 - ((j % 16) * 2) - (j % 16))
                         break
                     }
-                    if(fr.result[j].charCodeAt() >= 32 && fr.result[j].charCodeAt() <= 126){
-                        content.innerHTML += fr.result[j]
-                    }
-                    else{
-                        content.innerHTML += '.'
-                    }
                 }
-                content.innerHTML += '|'
-                //content.innerHTML += '|' + fr.result.substring(start,end) + '|'
+                    
+                //print actual file content in chunks of 16
+                content.innerHTML += '|' + data.slice(i,i+16) + '|'
+
                 content.innerHTML += '<br/>'
-                start = start + 16
-                end = end + 16
+
             }
-            if(i == fr.result.length - 1){
+
+            //print offset of the last byte in the file
+            if(i == data.length - 1){
                 let lastByteOffset = i + 1
                 content.innerHTML += lastByteOffset.toString(16).padStart(8,'0')
-            }
+            }   
         }
     }
 })
