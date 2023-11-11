@@ -5,11 +5,15 @@ const upload = document.getElementById('myFile')
 const content = document.getElementById('content')
 
 upload.addEventListener('change', () => {
+    //Delete the content if a file
+    //has already been imported.
+    if(content.innerHTML){
+        content.innerHTML = ''
+    }
 
     const fr = new FileReader()
 
-    fr.readAsText(upload.files[0])
-    
+    fr.readAsBinaryString(upload.files[0])
     fr.onload = () => {
 
         let start = 0
@@ -29,7 +33,16 @@ upload.addEventListener('change', () => {
                         }
                         break
                     }
-                    content.innerHTML += fr.result.charCodeAt(j).toString(16).toUpperCase().padStart(2,'0') + ' ' 
+                    if(fr.result.charCodeAt(j) < 127){
+                        //console.log('hi')
+                        content.innerHTML += fr.result.charCodeAt(j).toString(16).padStart(2,'0') + ' '    
+                    }
+                    else{
+                        console.log('hi')
+                        //content.innerHTML += fr.result.charCodeAt(j).toString(16).toUpperCase() + ' '
+                        content.innerHTML += fr.result.charCodeAt(j).toString(16) + ' '
+                    }
+                     
                 }
                 content.innerHTML += '|'
                 for(let j = start; j < end; j++){

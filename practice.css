@@ -61,6 +61,10 @@ img{
 #weather{
     border-radius: 25px;
 }
+
+#hexdump{
+    border-radius: 25px;
+}
 /* #linkedDiv{
     text-align: center;
 } */
