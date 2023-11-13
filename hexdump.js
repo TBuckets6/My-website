@@ -1,80 +1,103 @@
-//import hex from 'hex'
+((win, doc) => {
 
-const upload = document.getElementById('myFile')
+    //this reps the button allows selection of a file
+    const upload = doc.getElementById('fileId')
 
-const content = document.getElementById('content')
+    //this reps the div where the data will be displayed
+    const content = doc.getElementById('contentId')
 
-upload.addEventListener('change', () => {
-    //Delete the content if a file
-    //has already been imported.
-    if(content.innerHTML){
-        content.innerHTML = ''
-    }
+    let af = null
 
-    const fr = new FileReader()
+    const readFile = (file) => {
 
-    fr.readAsBinaryString(upload.files[0])
-    fr.onload = () => {
+        let fr = new FileReader()
 
-        let start = 0
-        let end = 16
+        return new Promise((res, rej) => {
 
-        //let data = fr.result
-        
-        //const hex = fr.result.split('').map((x) => x.charCodeAt().toString(16)).join('') // or .join(' ')
-
-        //function to determine if a character is printable ascii
-        const determinePrintableAscii = (d) => {
-            let content =''
-            for(let i = 0; i < d.length; i++){
-                if(d[i].charCodeAt() >= 32 && d[i].charCodeAt() <= 126){
-                    content += d[i]
-                }
-                else{
-                    content += '.'
-                }
-            }
-            return content
-        }
-
-        const data = determinePrintableAscii(fr.result)
-
-        for(let i = 0; i < data.length; i++){
-
-            if(i % 16 == 0){
-
-                //print the hex offset with leading zeros
-                content.innerHTML += i.toString(16).padStart(8,'0') + '  '
-
-                //content.innerHTML += hex.slice(i,i+32) + ' '
-
-                for(let j = i; j < i + 16; j++){
-                    if(data[j]){
-                        //print hex values of data
-                        content.innerHTML += data.charCodeAt(j).toString(16).padStart(2,'0') + ' '
-                    }
-                    else{
-                        console.log(j % 16)
-                        //since the final line doesnt have a full 16 characters this creates
-                        //the necessary whitespace to align the file content with all content 
-                        //above it
-                        content.innerHTML += ' '.repeat(58 - 10 - ((j % 16) * 2) - (j % 16))
-                        break
-                    }
-                }
-                    
-                //print actual file content in chunks of 16
-                content.innerHTML += '|' + data.slice(i,i+16) + '|'
-
-                content.innerHTML += '<br/>'
-
+            fr.onloadend = (event) => {
+                res(event.target.result)
             }
 
-            //print offset of the last byte in the file
-            if(i == data.length - 1){
-                let lastByteOffset = i + 1
-                content.innerHTML += lastByteOffset.toString(16).padStart(8,'0')
-            }   
-        }
+            fr.readAsArrayBuffer(file)
+        })
     }
-})
+
+    // const determinePrintableAscii
+
+    const showData = () => {
+
+        let view = new DataView(af)
+
+        let result = ''
+
+        let realVals = ''
+
+        let lastByte = ''
+
+        let finalContent = ''
+
+        for (let i = 0; i < view.byteLength; i++) {
+
+            //store the character value of the current byte or a '.'
+            if(view.getUint8(i) >= 32 && view.getUint8(i) <= 126){
+                realVals += String.fromCharCode(view.getUint8(i).toString())
+            }
+            else{
+                realVals += '.'
+            }
+            
+            
+            // if(i >= view.byteLength - 16 - 1){
+            //     finalContent += realVals
+            // }
+            
+            // console.log(typeof(view.getUint8(i))) //number
+            
+            //print the input offset in hex
+            if (i % 16 == 0) {
+                result += i.toString(16).padStart(8, '0') + '  '
+            }
+
+            //compute the hex representation of the current character
+            let value = view.getUint8(i).toString(16).padStart(2, '0')
+
+            //add the hex value to the result
+            result += value + ' '
+
+            //if we have reached the 16th byte then start a new line
+            //result += ((i - 15) % 16 === 0) ? '<br/>' : '';
+            if((i - 15) % 16 === 0){
+                // result += '<br/>'
+                result += ' ' + '|' + realVals + '|' + '<br/>'
+                if(i !== view.byteLength - 1){
+                    realVals = ''
+                }
+                
+            }
+
+            //get the offset of the last byte in the file
+            if(i === view.byteLength - 1){
+                lastByte = '<br/>' + (i+1).toString(16).padStart(8, '0')
+            }
+
+        }
+
+        //result += finalContent 
+
+        result += lastByte
+
+        content.innerHTML = result
+
+    }
+
+    //when a file has been selected,
+    //this will execute
+    upload.onchange = (event) => {
+
+        readFile(event.target.files[0])
+            .then(fileBuffer => { af = fileBuffer })
+            .then(() => showData())
+    }
+
+    //this calls the anon function. (crazyyy)
+})(window, document)
