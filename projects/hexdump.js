@@ -99,5 +99,4 @@
             .then(() => showData())
     }
 
-    //this calls the anon function. (crazyyy)
 })(window, document)
