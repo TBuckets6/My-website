@@ -22,8 +22,6 @@
         })
     }
 
-    // const determinePrintableAscii
-
     const showData = () => {
 
         let view = new DataView(af)
@@ -34,25 +32,18 @@
 
         let lastByte = ''
 
-        let finalContent = ''
-
         for (let i = 0; i < view.byteLength; i++) {
 
+            //For some reason, when view.getUint8(i) == 60, which is 3c in hex and
+            //is < in ascii, it cuts of the rest of the string.
             //store the character value of the current byte or a '.'
-            if(view.getUint8(i) >= 32 && view.getUint8(i) <= 126){
+            if (view.getUint8(i) != 60 && view.getUint8(i) >= 32 && view.getUint8(i) <= 126) {
                 realVals += String.fromCharCode(view.getUint8(i).toString())
             }
-            else{
+            else {
                 realVals += '.'
             }
-            
-            
-            // if(i >= view.byteLength - 16 - 1){
-            //     finalContent += realVals
-            // }
-            
-            // console.log(typeof(view.getUint8(i))) //number
-            
+
             //print the input offset in hex
             if (i % 16 == 0) {
                 result += i.toString(16).padStart(8, '0') + '  '
@@ -65,27 +56,24 @@
             result += value + ' '
 
             //if we have reached the 16th byte then start a new line
-            //result += ((i - 15) % 16 === 0) ? '<br/>' : '';
-            if((i - 15) % 16 === 0){
-                // result += '<br/>'
-                result += ' ' + '|' + realVals + '|' + '<br/>'
-                if(i !== view.byteLength - 1){
+            if ((i + 1) % 16 == 0) {
+                result += ' ' + '|' + realVals + '|' + '<br>'
+                if (i !== view.byteLength - 1) {
                     realVals = ''
                 }
-                
             }
 
             //get the offset of the last byte in the file
-            if(i === view.byteLength - 1){
-                lastByte = '<br/>' + (i+1).toString(16).padStart(8, '0')
+            if (i === view.byteLength - 1) {
+                lastByte = '<br>' + (i + 1).toString(16).padStart(8, '0')
             }
 
         }
 
-        //result += finalContent 
-
+        //add the offset of the last byte to the final line of the output
         result += lastByte
 
+        //add complete output to the content div's innerHTML
         content.innerHTML = result
 
     }
