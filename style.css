@@ -1,21 +1,70 @@
-p{
-    max-width: 100ch;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10px;
+}
+
+body {
+    margin: 0px;
+    text-align: center;
+}
+
+#nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    /* border-style: none; */
+}
+
+#nav ul {
+    list-style-type: none;
+    background-color: rgb(93, 17, 163);
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+#nav a {
+    color: beige;
+    text-decoration: none;
+    /* padding: 15px; */
+    display: block;
+    text-align: center;
+    padding: 15px;
+}
+
+#nav li {
+    float: left;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+#tay {
+    /* margin-top: 49px; */
+    background-image: url(pexels-philippe-donn-1169754.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+
+p {
+    max-width: 25ch;
     text-align: center;
     margin: 0 auto;
 }
 
-body{
-    text-align: center;
-    background-color: rgb(105, 131, 158);
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto; */
-}
-
-h1,h2,p{
+h1,
+h2,
+p {
     /*font-family: 'Courier New', Courier, monospace;*/
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: beige;
+    color: rgb(17, 16, 16);
 
     /* max-width: 50spx;
     overflow: hidden;
@@ -23,53 +72,75 @@ h1,h2,p{
     text-overflow: ellipsis; */
 }
 
-h1{
-    font-size: 60px;
+#nameTitle {
+    
+    font-size: 90px;
     color: beige;
-}
-
-#myPic{
     position: relative;
     top: 40px;
+
+}
+
+#myPic {
+    position: relative;
+    top: 100px;
     border-radius: 50%;
     border: 10px solid beige;
 }
 
 
-figure{
+figure {
     display: inline-block;
 }
 
-figcaption{
+figcaption {
     text-align: center;
     color: beige;
 }
 
-img{
+img {
     background-color: beige;
 }
 
 
-#c4Id{
-    border-radius: 25px;
+#projects h2{
+    /* background-color: rgb(93, 17, 163); */
+    /* color: beige; */
+    margin: 0px;
+    padding-bottom: 20px;
+    padding: 20px;
+    font-size: 30px;
 }
 
-#cal{
-    border-radius: 25px;
-}
-
-#weather{
-    border-radius: 25px;
-}
-
-#hexdump{
-    border-radius: 25px;
-}
-/* #linkedDiv{
-    text-align: center;
+/* #projects{
+    height: 100vh;
 } */
 
-#projectsId{
-    width: 500px;
-    margin: auto;
+.projectsContainer {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto auto;
+    /* background-color: rgb(93, 17, 163); */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* padding: 20px; */
+    column-gap: 0px;
+    /* width: 200px; */
+    /* justify-items: center; */
+}
+
+.projectsItem {
+    /* border-radius: 25px; */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    /* background-color: rgb(93, 17, 163); */
+    /* padding: 0px; */
+    font-size: 15px;
+    text-align: center;
+
+    /* width: 300px; */
+}
+
+.projectsItem img:hover{
+    opacity: .7;
+    background-color: blueviolet;
 }
