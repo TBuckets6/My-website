@@ -14,8 +14,11 @@
         <ul>
             <li><a href="#tay">Taylor Bushey</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- ------------------------------------------------------Taylor Bushey-------------------------------------------------------------- -->
 
     <div id="tay">
         <img src="pic.jpeg" width="236.67" height="189.67" id="myPic"> <!--w=710 h=569-->
@@ -40,7 +43,7 @@
     </div>
 
     <!-- <br> -->
-
+<!-- -----------------------------------------------------Projects-------------------------------------------------------------- -->
     <div id="projects">
         <h2>Projects</h2>
         <div class="projectsContainer">
@@ -59,6 +62,60 @@
       </p> -->
 
             <!-- <br> -->
+            <div id="seamCarvDiv" class="projectsItem" style="text-align: center;">
+                <img src="seamCarver.png" alt="mountains" height="200" width="225" id="seamCarverImg">
+
+                <br>
+                <p>
+                A seam carving application for content-aware image resizing.
+                </p>
+
+                <div id="modalDiv" class="modalDiv">
+                    <dialog id="modalId" class="modalClass">
+                        <h1>Seam Carver</h1>
+                        <p >A seam carving application for content-aware image resizing.</p>
+                        <br>
+                        <img src="vertical_carving.gif" alt="vertically carving GIF" width="400px" height="400px">
+                        <br>
+                        <p id="seamCarvDesc" class="seamCarvDesc">
+                        Seam carving is a content-aware image resizing technique that intelligently identifies 
+                        and removes the least important pixels from an image, allowing for non-uniform scaling
+                         while preserving important content.</p>
+                        <br>
+                        <p class="seamCarvDesc">
+                            <strong>Key Features:</strong>
+                            <br>
+                            <br>
+                            <strong>Content-Aware Resizing:</strong>Seam carving adapts to the content of an image, preserving important 
+                            features and details during the resizing process.
+                            <br>
+                            <strong>Real-time Visualization:</strong>  The project includes animated GIFs that vividly illustrate how seams are 
+                            intelligently carved from the image, with red lines highlighting the pixels being removed.
+                            <br>
+                            <strong>Vertical and Horizontal Carving:</strong> Seam carving is performed in both vertical and horizontal 
+                            directions, providing flexibility in adjusting the image size based on specific requirements.
+                            <br>
+                            <strong>Energy Visualization:</strong>Explore the energy visualization of the image, showcasing the algorithm's 
+                            understanding of the importance of each pixel in the context of its surroundings.
+                            <br>
+                            <strong>Efficiency and Optimization:</strong> The project includes optimizations to enhance the efficiency of 
+                            the seam carving process, ensuring a smoother experience even for high-resolution images.
+                            <br>
+                            <strong>Technologies Used:</strong>
+                            Programming Language: Python
+                            <br>
+                            Libraries: NumPy, PIL (Pillow), tqdm
+                        </p>
+                        <br>
+                        <p>View this project on GitHub:</p>
+                        <a href="https://github.com/TBuckets6/SeamCarver" target="_blank" id="seamCarvLink">
+                            https://github.com/TBuckets6/SeamCarver
+                        </a>
+                        <button id="closeModal">&times;</button>
+                    </dialog>
+                </div>
+            </div>
+
             <div id="cFourDiv" class="projectsItem" style="text-align: center;">
                 <a href="projects/cFourAtt3.html" target="_blank">
 
@@ -101,6 +158,14 @@
     <!-- <div id="skills">
         <h2>Skills</h2>
     </div> -->
+<!-- --------------------------------------------------Contact-------------------------------------------------- -->
+    <div id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: tbushey236@gmail.com</p>
+        <p>Phone: 413-768 7096</p>
+    </div>
+
+    <script src="seamCarverModal.js" type="module"></script>
 
 </body>
 
