@@ -43,7 +43,7 @@
     </div>
 
     <!-- <br> -->
-<!-- -----------------------------------------------------Projects-------------------------------------------------------------- -->
+    <!-- -----------------------------------------------------Projects-------------------------------------------------------------- -->
     <div id="projects">
         <h2>Projects</h2>
         <div class="projectsContainer">
@@ -67,38 +67,44 @@
 
                 <br>
                 <p>
-                A seam carving application for content-aware image resizing.
+                    A seam carving application for content-aware image resizing.
                 </p>
 
                 <div id="modalDiv" class="modalDiv">
                     <dialog id="modalId" class="modalClass">
                         <h1>Seam Carver</h1>
-                        <p >A seam carving application for content-aware image resizing.</p>
+                        <p>A seam carving application for content-aware image resizing.</p>
                         <br>
                         <img src="vertical_carving.gif" alt="vertically carving GIF" width="400px" height="400px">
                         <br>
                         <p id="seamCarvDesc" class="seamCarvDesc">
-                        Seam carving is a content-aware image resizing technique that intelligently identifies 
-                        and removes the least important pixels from an image, allowing for non-uniform scaling
-                         while preserving important content.</p>
+                            Seam carving is a content-aware image resizing technique that intelligently identifies
+                            and removes the least important pixels from an image, allowing for non-uniform scaling
+                            while preserving important content.</p>
                         <br>
                         <p class="seamCarvDesc">
                             <strong>Key Features:</strong>
                             <br>
                             <br>
-                            <strong>Content-Aware Resizing:</strong>Seam carving adapts to the content of an image, preserving important 
+                            <strong>Content-Aware Resizing:</strong>Seam carving adapts to the content of an image,
+                            preserving important
                             features and details during the resizing process.
                             <br>
-                            <strong>Real-time Visualization:</strong>  The project includes animated GIFs that vividly illustrate how seams are 
+                            <strong>Real-time Visualization:</strong> The project includes animated GIFs that vividly
+                            illustrate how seams are
                             intelligently carved from the image, with red lines highlighting the pixels being removed.
                             <br>
-                            <strong>Vertical and Horizontal Carving:</strong> Seam carving is performed in both vertical and horizontal 
-                            directions, providing flexibility in adjusting the image size based on specific requirements.
+                            <strong>Vertical and Horizontal Carving:</strong> Seam carving is performed in both vertical
+                            and horizontal
+                            directions, providing flexibility in adjusting the image size based on specific
+                            requirements.
                             <br>
-                            <strong>Energy Visualization:</strong>Explore the energy visualization of the image, showcasing the algorithm's 
+                            <strong>Energy Visualization:</strong>Explore the energy visualization of the image,
+                            showcasing the algorithm's
                             understanding of the importance of each pixel in the context of its surroundings.
                             <br>
-                            <strong>Efficiency and Optimization:</strong> The project includes optimizations to enhance the efficiency of 
+                            <strong>Efficiency and Optimization:</strong> The project includes optimizations to enhance
+                            the efficiency of
                             the seam carving process, ensuring a smoother experience even for high-resolution images.
                             <br>
                             <strong>Technologies Used:</strong>
@@ -126,7 +132,7 @@
                 <p>Connect Four is a popular two player game. Each player is assigned either yellow or red discs. The
                     objective
                     of the game is to align four of your discs in a row either vertically, horizontally, or diagonally.
-                    </p>
+                </p>
             </div>
             <!-- <br>
         <br> -->
@@ -136,7 +142,7 @@
                 </a>
                 <br>
                 <p>This application fetches weather data from the Weather API on OpenWeatherMap.org.
-                   It uses Svelte framework for the frontend and Node.js for the backend.
+                    It uses Svelte framework for the frontend and Node.js for the backend.
                 </p>
             </div>
             <!-- <br>
@@ -147,7 +153,7 @@
                 </a>
                 <br>
                 <p>A Hexdump implementation that prints the contents of a file in hexadecimal.
-                   Implemented with vanilla HTML5, CSS3, and JavaScript.
+                    Implemented with vanilla HTML5, CSS3, and JavaScript.
                 </p>
 
             </div>
@@ -158,38 +164,38 @@
     <!-- <div id="skills">
         <h2>Skills</h2>
     </div> -->
-<!-- --------------------------------------------------Contact-------------------------------------------------- -->
+    <!-- --------------------------------------------------Contact-------------------------------------------------- -->
     <div id="contact">
         <h2>Contact Me</h2>
+        <br>
+        <h2>Email: tbushey236@gmail.com</h2>
+        <br>
+        <br>
         <form action="#" class="form-contact">
-            <input type="text" name="name" id="name" placeholder="Your name">
-            <input type="email" name="email" id="email" placeholder="Your email">
-            <input type="tel" name="tel" id="tel" placeholder="Your number">
-            <input type="text" name="subject" id="subject" placeholder="Subject">
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+            <div id="contactInfo">
+                
+                <input type="text" name="namee" id="namee" placeholder="Your name*" required>
+                <br>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Your email*" required>
+                <br>
+                <br>
+                <input type="tel" name="tel" id="tel" placeholder="Your number">
+                <br>
+                <br>
+                <input type="text" name="subject" id="subject" placeholder="Subject*" required>
+            </div>
+            <!-- <br> -->
+            <div id="contactMsg">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message*"
+                    required></textarea>
+            </div>
+            <br>
             <input type="submit" name="submit" id="submit">
         </form>
     </div>
-    
-    <!-- <div id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: tbushey236@gmail.com</p>
-        <p>Phone: 413-768 7096</p>
-        <br>
-        <form>
-            <input type="text" name="name" id="contactName" placeholder="Your name *" required>
-            <br>    
-            <input type="email" name="email" id="contactEmail" placeholder="Your email address *" required>
-            <br>
-            <input type="tel" name="phone" id="contactNumber" placeholder="Your phone number">
-            <br>
-            <input type="text" name="subject" id="contactSubject" placeholder="Subject *" required>
-            <br>
-            <textarea name="message" id="contactMessage" cols="40" rows="10" required placeholder="Your Message *"></textarea>
-            <br>
-            <button type="submit" id="contactBtn">Send Message</button>
-        </form>
-    </div> -->
+    <br>
+    <br>
 
     <script src="seamCarverModal.js" type="module"></script>
     <script src="contactEmail.js" type="module"></script>

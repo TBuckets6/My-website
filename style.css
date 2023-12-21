@@ -73,7 +73,7 @@ p {
 }
 
 #nameTitle {
-    
+
     font-size: 90px;
     color: beige;
     position: relative;
@@ -103,7 +103,8 @@ img {
 }
 
 
-#projects h2, #contact h2{
+#projects h2,
+#contact h2 {
     /* background-color: rgb(93, 17, 163); */
     /* color: beige; */
     margin: 0px;
@@ -140,36 +141,39 @@ img {
     /* width: 300px; */
 }
 
-.projectsItem img:hover{
+.projectsItem img:hover {
     opacity: .7;
     background-color: blueviolet;
     cursor: pointer;
 }
 
-dialog{
+dialog {
     width: 700px;
     height: 450px;
 }
 
-dialog::backdrop{
+dialog::backdrop {
     background-color: hsla(197, 3%, 50%, 0.5);
 }
 
-.seamCarvDesc{
+.seamCarvDesc {
     max-width: 50ch;
 }
 
-#closeModal{
-    position:absolute; top:2px; right:0;
+#closeModal {
+    position: absolute;
+    top: 2px;
+    right: 0;
     width: 100px;
     height: 60px;
     font-size: 50px;
 }
 
-#modalId{
+/* ---------------------------------------------------Contact section CSS ------------------------------------------- */
 
-}
-
-#seamCarvLink{
-    
+#contactMsg,
+#contactInfo {
+    display: inline-block;
+    vertical-align: top;
+    /* Optional for vertical alignment */
 }
