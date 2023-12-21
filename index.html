@@ -163,9 +163,22 @@
         <h2>Contact Me</h2>
         <p>Email: tbushey236@gmail.com</p>
         <p>Phone: 413-768 7096</p>
+        <br>
+        <form onsubmit="sendEmail()">
+            <input type="text" name="name" id="contactName" placeholder="Your name *" required>
+            <br>    
+            <input type="email" name="email" id="contactEmail" placeholder="Your email address *" required>
+            <br>
+            <input type="tel" name="phone" id="contactNumber" placeholder="Your phone number">
+            <br>
+            <textarea name="message" id="contactMessage" cols="40" rows="10" required placeholder="Your Message *"></textarea>
+            <br>
+            <button type="submit" id="contactBtn">Send Message</button>
+        </form>
     </div>
 
     <script src="seamCarverModal.js" type="module"></script>
+    <script src="contactEmail.js" type="module"></script>
 
 </body>
 
