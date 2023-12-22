@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 27px;
+    scroll-padding-top: 46px;
 }
 
 body {
@@ -147,6 +147,8 @@ img {
     cursor: pointer;
 }
 
+/* ----------------------------This code handles the popup for the seam-carver application------------------------- */
+
 dialog {
     width: 700px;
     height: 450px;
@@ -175,5 +177,4 @@ dialog::backdrop {
 #contactInfo {
     display: inline-block;
     vertical-align: top;
-    /* Optional for vertical alignment */
 }
