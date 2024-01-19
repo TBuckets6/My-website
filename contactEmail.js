@@ -29,6 +29,11 @@ submit.addEventListener('submit', (e) => {
     Subject: subject.value,
     Body: body
   }).then(
-    message => alert(message)
+    message => alert(message),
+    namee.value = '',
+    email.value = '',
+    tel.value = '',
+    message.value = '',
+    subject.value = ''
   );
 })
