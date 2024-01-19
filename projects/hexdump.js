@@ -54,7 +54,7 @@
 000002d0 27 2e 27 2e                                     |'.'.|
 `
 
-    content.innerHTML = `<pre style="font-family: 'Courier New', Courier, monospace; font-size: small;>${example}</pre>`
+    content.innerHTML = `<pre style="font-family: 'Courier New', Courier, monospace; font-size: small";>${example}</pre>`
 
     let af = null
 
