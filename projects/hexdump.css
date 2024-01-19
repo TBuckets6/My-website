@@ -1,49 +1,37 @@
-/* html{
-    background-color: rgb(214, 211, 211);
-} */
+body {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 0;
+}
 
-#contentId {
+.content {
     font-family: 'Courier New', Courier, monospace, monospace;
     font-size: small;
+    overflow: auto;
+    text-align: center;
 }
 
 .container {
-    /* background-color: blue; */
-    /* width: 50vw;
-    height: 50vh; */
-    top: 0px;
-    bottom: 0px;
-    display: grid;
-    place-items: center;
-    /* position: absolute; */
-    left: 10%;
-    right: 10%;
-
-    /* background-color: white; */
-    /* height: 100vh; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    box-shadow: 0 0 10px rgba(29, 26, 26, 0.7);
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 60%;
+    overflow: auto;
 }
 
 .title {
-    font-size: 60px;
+    font-size: 4rem;
+    font-weight: lighter;
+    margin-bottom: 5px;
+    margin-top:0;
+    margin-bottom: 2px;
 }
 
-/* .center {
-    margin: auto;
-    width: 50%;
+p{
+    margin-top: 0;
+    margin-bottom: 5px;
 }
-
-
-
-.title {
-    text-align: center;
-    font-size: 50px;
-}
-
-div {
-    padding-top: 25px;
-} */
-
-/* .myFile{
-    width: 300px;
-    height: 500px;
-} */

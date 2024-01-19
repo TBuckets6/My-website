@@ -12,12 +12,12 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    /* border-style: none; */
+    z-index: 10;
 }
 
 #nav ul {
     list-style-type: none;
-    background-color: rgb(93, 17, 163);
+    background-color: rgb(152, 155, 156);
     overflow: hidden;
     padding: 0px;
     margin: 0px;
@@ -42,15 +42,13 @@ li a:hover {
 
 #tay {
     /* margin-top: 49px; */
-    background-image: url(pexels-philippe-donn-1169754.jpg);
+    background-image: url(images/pexels-philippe-donn-1169754.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
 }
-
-
 
 
 p {
@@ -102,6 +100,9 @@ img {
     background-color: beige;
 }
 
+#projects{
+    height: 100vh;
+}
 
 #projects h2,
 #contact h2 {
@@ -111,6 +112,7 @@ img {
     padding-bottom: 20px;
     padding: 20px;
     font-size: 30px;
+
 }
 
 /* #projects{
@@ -121,20 +123,11 @@ img {
     display: grid;
     gap: 10px;
     grid-template-columns: auto auto auto auto;
-    /* background-color: rgb(93, 17, 163); */
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    /* padding: 20px; */
     column-gap: 0px;
-    /* width: 200px; */
-    /* justify-items: center; */
 }
 
 .projectsItem {
-    /* border-radius: 25px; */
     background-color: rgba(255, 255, 255, 0.8);
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
-    /* background-color: rgb(93, 17, 163); */
-    /* padding: 0px; */
     font-size: 15px;
     text-align: center;
 
@@ -143,7 +136,7 @@ img {
 
 .projectsItem img:hover {
     opacity: .7;
-    background-color: blueviolet;
+    background-color: rgb(202, 199, 206);
     cursor: pointer;
 }
 
@@ -177,4 +170,15 @@ dialog::backdrop {
 #contactInfo {
     display: inline-block;
     vertical-align: top;
+}
+
+#contact{
+    background-color: rgb(73, 158, 116);
+    height: 100vh;
+    margin-bottom: 0;
+    color: beige;
+}
+
+#contact h2{
+    color: beige;
 }
