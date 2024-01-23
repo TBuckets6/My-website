@@ -233,6 +233,10 @@ dialog::backdrop {
     font-size: 50px;
 }
 
+input{
+    background-color: white;
+}
+
 .contact-container {
     min-height: 100vh;
     background-color: rgb(73, 158, 116);
