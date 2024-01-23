@@ -233,6 +233,14 @@ dialog::backdrop {
     font-size: 50px;
 }
 
+.seamcarver-link-title{
+    font-size: 1.25rem;
+}
+
+.seamcarver-link{
+    font-size: 1.25rem;
+}
+
 input, textarea{
     background-color: white;
 }

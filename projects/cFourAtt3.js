@@ -4,14 +4,11 @@ const chipsMsg = document.getElementById('chipsMsgId');
 const titleId = document.getElementById('titleId');
 const whosTurn = document.getElementById('turnId');
 
-// NEW
 const modal = document.getElementById('modalId');
 const helpBtn = document.getElementById('helpButton');
 const resetBtn = document.getElementById('resetBtn');
 
 let flag = 0;
-
-// REPLACED ALL BLACK VARIABLES WITH YELLOW FOR JS AND CSS
 
 const winningArr = [
     [0, 1, 2, 3], [41, 40, 39, 38], [7, 8, 9, 10],
