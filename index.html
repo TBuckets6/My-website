@@ -59,63 +59,137 @@
             <h1 id="projectsTitle">Projects</h1>
             <div class="project-container">
                 <div id="seamCarvDiv" class="project-item card">
-                <!--  for imgs below: height="265" width="250" (not the gif) -->
+                    <!--  for imgs below: height="265" width="250" (not the gif) -->
                     <img src="images/seamCarver.png" alt="mountains" id="seamCarverImg" class="project-img">
                     <p>
                         A seam carving application for content-aware image resizing.
                     </p>
                     <div id="modalDiv" class="modalDiv">
-                        <dialog id="modalId" class="modalClass">
+                        <dialog class="modal-class" id="seamcarver-modal"> <!--id=modalId-->
                             <h1>Seam Carver</h1>
-                            <p>A seam carving application for content-aware image resizing.</p>
-                            <br>
-                            <img src="images/vertical_carving.gif" alt="vertically carving GIF" width="400px"
-                                height="300px" class="gif">
-                            <p id="seamCarvDesc" class="seamCarvDesc">
-                                Seam carving is a content-aware image resizing technique that intelligently identifies
-                                and removes the least important pixels from an image, allowing for non-uniform scaling
-                                while preserving important content.</p>
-                            <p class="seamCarvDesc">
-                                <strong>Key Features:</strong>
+                            <div class="modal-keyfeatures">
+                                <p>A seam carving application for content-aware image resizing.</p>
                                 <br>
-                                <strong>Content-Aware Resizing:</strong>Seam carving adapts to the content of an image,
-                                preserving important
-                                features and details during the resizing process.
-                                <br>
-                                <strong>Real-time Visualization:</strong> The project includes animated GIFs that
-                                vividly
-                                illustrate how seams are
-                                intelligently carved from the image, with red lines highlighting the pixels being
-                                removed.
-                                <br>
-                                <strong>Vertical and Horizontal Carving:</strong> Seam carving is performed in both
-                                vertical
-                                and horizontal
-                                directions, providing flexibility in adjusting the image size based on specific
-                                requirements.
-                                <br>
-                                <strong>Energy Visualization:</strong>Explore the energy visualization of the image,
-                                showcasing the algorithm's
-                                understanding of the importance of each pixel in the context of its surroundings.
-                                <br>
-                                <strong>Efficiency and Optimization:</strong> The project includes optimizations to
-                                enhance
-                                the efficiency of
-                                the seam carving process, ensuring a smoother experience even for high-resolution
-                                images.
-                                <br>
-                                <strong>Technologies Used:</strong>
-                                Programming Language: Python
-                                <br>
-                                Libraries: NumPy, PIL (Pillow), tqdm
-                            </p>
-                            <strong><p class="seamcarver-link-title">View this project on GitHub:</p></strong>
-                            <a href="https://github.com/TBuckets6/SeamCarver" target="_blank" id="seamCarvLink" class="seamcarver-link">
+                                <img src="images/vertical_carving.gif" alt="vertically carving GIF" width="400px"
+                                    height="300px" class="gif">
+                                <p id="seamCarvDesc" class="seamCarvDesc">
+                                    Seam carving is a content-aware image resizing technique that intelligently
+                                    identifies
+                                    and removes the least important pixels from an image, allowing for non-uniform
+                                    scaling
+                                    while preserving important content.</p>
+                                <p class="seamCarvDesc">
+                                    <strong>Key Features:</strong>
+                                    <br>
+                                    <strong>Content-Aware Resizing:</strong>Seam carving adapts to the content of an
+                                    image,
+                                    preserving important
+                                    features and details during the resizing process.
+                                    <br>
+                                    <strong>Real-time Visualization:</strong> The project includes animated GIFs that
+                                    vividly
+                                    illustrate how seams are
+                                    intelligently carved from the image, with red lines highlighting the pixels being
+                                    removed.
+                                    <br>
+                                    <strong>Vertical and Horizontal Carving:</strong> Seam carving is performed in both
+                                    vertical
+                                    and horizontal
+                                    directions, providing flexibility in adjusting the image size based on specific
+                                    requirements.
+                                    <br>
+                                    <strong>Energy Visualization:</strong>Explore the energy visualization of the image,
+                                    showcasing the algorithm's
+                                    understanding of the importance of each pixel in the context of its surroundings.
+                                    <br>
+                                    <strong>Efficiency and Optimization:</strong> The project includes optimizations to
+                                    enhance
+                                    the efficiency of
+                                    the seam carving process, ensuring a smoother experience even for high-resolution
+                                    images.
+                                    <br>
+                                    <strong>Technologies Used:</strong>
+                                    Programming Language: Python
+                                    <br>
+                                    Libraries: NumPy, PIL (Pillow), tqdm
+                                </p>
+                            </div>
+                            <strong>
+                                <p class="seamcarver-link-title">View this project on GitHub:</p>
+                            </strong>
+                            <a href="https://github.com/TBuckets6/SeamCarver" target="_blank" id="seamCarvLink"
+                                class="seamcarver-link">
                                 https://github.com/TBuckets6/SeamCarver
                             </a>
-                            <button id="closeModal" class="closeModal">&times;</button>
+                            <button id="close-seam-modal" class="closeModal">&times;</button>
                         </dialog>
                     </div>
+                </div>
+                <div id="weather" class="project-item card">
+                    <!-- <a href="https://full-stack-weather-app-cpy-front.vercel.app/" target="_blank">
+                        <img src="images/sun.png" alt="weather" id="weatherImg" class="project-img">
+                    </a> -->
+                    <img src="images/sun.png" alt="weather" id="weatherImg" class="project-img">
+                    <p>This application fetches weather data from the Weather API on OpenWeatherMap.org.
+                        It uses Svelte framework for the frontend and Node.js for the backend.
+                    </p>
+                    <div class="modalDiv"> <!--id="modalDiv"-->
+                        <dialog id="weather-modal" class="modal-class"> <!--id="modalId"-->
+                            <h1>Weather App</h1>
+
+
+                            <div class="modal-keyfeatures">
+                                <p>An interactive full-stack weather application built with Svelte and Node.js,
+                                    providing users with real-time current weather and trihourly forecasts based on
+                                    their
+                                    location search.</p>
+                                <strong>Key Features:</strong>
+                                <br>
+                                <strong>Weather Data Retrieval:</strong> Seamlessly fetch real-time weather information
+                                using OpenWeatherAPI, providing users with current conditions and trihourly forecasts
+                                based
+                                on their location search.
+                                <br>
+                                <strong>User-Friendly Interface:</strong> Intuitive design and interactive components
+                                offer
+                                a seamless user experience, making it easy to search for weather updates and visualize
+                                trihourly forecasts.
+                                <br>
+                                <strong>Content-Aware Validation:</strong> The app ensures data accuracy by validating
+                                user
+                                input for city and state, providing feedback on invalid entries and ensuring reliable
+                                weather updates.
+                                <br>
+                                <strong>Efficient Backend Processing:</strong> Utilizing Node.js on the server side, the
+                                app
+                                optimizes the retrieval and processing of weather data, ensuring efficiency and
+                                responsiveness.
+                                <br>
+                                <strong>Technologies Used:</strong>
+                                Programming Languages: Svelte (Frontend), Node.js (Backend)
+                                <br>
+                                Libraries: Fetch API, Express, Svelte Store, Node-fetch
+                            </div>
+
+                            <strong>
+                                <p class="seamcarver-link-title project-description">Click the link to view my weather
+                                    app:</p>
+                            </strong>
+                            <a href="https://full-stack-weather-app-cpy-front.vercel.app/" target="_blank"
+                                id="seamCarvLink" class="seamcarver-link">
+                                https://full-stack-weather-app-cpy-front.vercel.app/
+                            </a>
+                            <button id="close-weather-modal" class="closeModal">&times;</button>
+                        </dialog>
+                    </div>
+                </div>
+                <div id="hexdump" class="project-item card">
+                    <a href="projects/hexdump.html" target="_blank">
+                        <img src="images/hex.png" alt="hexdump" id="hexdump" class="project-img">
+                    </a>
+                    <p>A Hexdump implementation that prints the contents of a file in hexadecimal.
+                        Implemented with vanilla HTML5, CSS3, and JavaScript.
+                    </p>
                 </div>
                 <div id="cFourDiv" class="project-item card">
                     <a href="projects/cFourAtt3.html" target="_blank">
@@ -128,24 +202,7 @@
                         diagonally.
                     </p>
                 </div>
-                <div id="weather" class="project-item card">
-                    <a href="https://full-stack-weather-app-cpy-front.vercel.app/" target="_blank">
-                        <img src="images/sun.png" alt="weather" id="weather" class="project-img">
-                    </a>
-                    <p>This application fetches weather data from the Weather API on OpenWeatherMap.org.
-                        It uses Svelte framework for the frontend and Node.js for the backend.
-                    </p>
-                </div>
-                <div id="hexdump" class="project-item card">
-                    <a href="projects/hexdump.html" target="_blank">
-                        <img src="images/hex.png" alt="hexdump" id="hexdump" class="project-img">
-                    </a>
-                    <p>A Hexdump implementation that prints the contents of a file in hexadecimal.
-                        Implemented with vanilla HTML5, CSS3, and JavaScript.
-                    </p>
-                </div>
             </div>
-
         </div>
 
 

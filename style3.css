@@ -220,8 +220,14 @@ dialog::backdrop {
     background-color: hsla(197, 3%, 50%, 0.5);
 }
 
-.modalClass{
+.modal-class{
     overflow-y: auto;
+}
+
+.modal-keyfeatures{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    line-height: 1.5rem;
 }
 
 .closeModal {
@@ -231,6 +237,7 @@ dialog::backdrop {
     width: 100px;
     height: 60px;
     font-size: 50px;
+    cursor: pointer;
 }
 
 .seamcarver-link-title{
