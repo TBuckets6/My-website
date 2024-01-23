@@ -8,11 +8,12 @@ body {
     text-align: center;
 }
 
+
 #nav {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 10;
+    z-index: 1;
 }
 
 #nav ul {
@@ -39,6 +40,8 @@ body {
 li a:hover {
     background-color: #111;
 }
+
+
 
 #profile {
     /* margin-top: 49px; */
@@ -101,7 +104,7 @@ img {
     background-color: beige;
 }
 
-#projects{
+#projects {
     height: 100vh;
 }
 
@@ -119,7 +122,7 @@ img {
     height: 100vh;
 } */
 
-#projectsTitle{
+#projectsTitle {
     margin-bottom: 40px;
     padding-bottom: 20px;
     padding: 20px;
@@ -151,7 +154,7 @@ img {
     cursor: pointer;
 }
 
-.projectsItem img{
+.projectsItem img {
     margin: 0;
     padding: 0;
     gap: 0;
@@ -189,13 +192,67 @@ dialog::backdrop {
     vertical-align: top;
 }
 
-#contact{
+#contact {
     background-color: rgb(73, 158, 116);
     height: 100vh;
     margin-bottom: 0;
     color: beige;
 }
 
-#contact h2{
+#contact h2 {
     color: beige;
+}
+
+
+
+
+/* Media query for screens with a maximum width of 768px (typical tablet size) */
+@media only screen and (max-width: 768px) {
+
+
+
+    #nav {
+        position: fixed;
+    }
+
+    #profile {
+        height: auto;
+        text-align: center;
+    }
+
+    #nameTitle {
+        font-size: 60px;
+        top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #myPic {
+        top: 50px;
+    }
+
+    .projectsContainer {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    #nameTitle {
+        font-size: 40px;
+        top: 10px;
+        margin-bottom: 5px;
+    }
+
+    #myPic {
+        top: 30px;
+    }
+
+    .projectsContainer {
+        grid-template-columns: auto;
+    }
+
+    #projects {
+        height: auto;
+        padding-bottom: 20px;
+    }
 }
