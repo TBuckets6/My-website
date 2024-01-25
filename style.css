@@ -349,5 +349,9 @@ textarea {
     nav li:first-child {
     /* Add margin between Taylor and the rest of the links */
     margin-right: 0;
-}
+    }
+
+    nav li{
+        padding: .25rem;
+    }
 }
