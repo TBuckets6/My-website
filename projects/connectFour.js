@@ -2,6 +2,8 @@ const board = document.getElementById('board-grid')
 const modal = document.getElementById('modal')
 const playAgainBtn = document.getElementById('play-again')
 const winnerText = document.getElementById('winner-text')
+const playerTurn = document.getElementById('player-turn')
+const playerTurnText = document.getElementById('player-turn-text')
 
 const redArray = []
 const yellowArr = []
@@ -10,6 +12,9 @@ const yellowArr = []
 let turn = 0;
 
 function initBoard() {
+
+    playerTurnText.textContent = "Red's Turn"
+    playerTurnText.style.color = 'red'
 
     for (let row = 0; row < 6; row++) {
         for (let col = 0; col < 7; col++) {
@@ -29,11 +34,17 @@ function initBoard() {
                     if (turn % 2 == 0) {
                         disc.style.backgroundColor = 'red'
                         disc.classList.add('red-disc')
+                        playerTurnText.textContent = "Yellow's Turn"
+                        playerTurnText.style.color = 'yellow'
+
                     } else {
                         disc.style.backgroundColor = 'yellow'
                         disc.classList.add('yellow-disc')
+                        playerTurnText.textContent = "Red's Turn"
+                        playerTurnText.style.color = 'red'
                     }
                     slot.appendChild(disc)
+                    
                     turn++
 
                 }
@@ -48,11 +59,17 @@ function initBoard() {
                         if (turn % 2 == 0) {
                             disc.style.backgroundColor = 'red'
                             disc.classList.add('red-disc')
+                            playerTurnText.textContent = "Yellow's Turn"
+                            playerTurnText.style.color = 'yellow'
                         } else {
                             disc.style.backgroundColor = 'yellow'
                             disc.classList.add('yellow-disc')
+                            playerTurnText.textContent = "Red's Turn"
+                            playerTurnText.style.color = 'red'
                         }
                         slot.appendChild(disc)
+                        // playerTurnText.textContent = "Yellow's Turn"
+                        // playerTurnText.style.color = 'yellow'
                         turn++
 
                     }
@@ -164,6 +181,8 @@ function clearBoard() {
     const discs = document.querySelectorAll('.disc')
     discs.forEach(disc => disc.remove())
     turn = 0
+    playerTurnText.textContent = "Red's Turn"
+    playerTurnText.style.color = 'red'
 }
 
 initBoard()
