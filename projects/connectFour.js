@@ -1,5 +1,7 @@
 const board = document.getElementById('board-grid')
 const modal = document.getElementById('modal')
+const playAgainBtn = document.getElementById('play-again')
+const winnerText = document.getElementById('winner-text')
 
 const redArray = []
 const yellowArr = []
@@ -122,26 +124,46 @@ function checkSlots(slots) {
 function getWinner(s) {
     if (s[0].children[0].classList.contains('red-disc')) {
         console.log('red winds')
-        for(let i = 0; i < 4; i++){
+        for (let i = 0; i < 4; i++) {
             s[i].children[0].innerHTML = i + 1
         }
         setTimeout(() => {
-            modal.innerHTML = 'Red wins'
-            modal.showModal()
-            // console.log("Delayed for 1 second.");
-        }, "3000");
-    } else {
-        console.log('yellow wins')
-        for(let i = 0; i < 4; i++){
-            s[i].children[0].innerHTML = i + 1
-        }
-        setTimeout(() => {
-            modal.innerHTML = 'Yellow wins'
+            // modal.innerHTML = 'Red wins'
+            modal.style.backgroundColor = 'red'
+            winnerText.style.color = 'white'
+            winnerText.textContent = 'Red Wins!'
             modal.showModal()
             // console.log("Delayed for 1 second.");
 
+            playAgainBtn.addEventListener('click', () => {
+                modal.close()
+                clearBoard()
+            })
+        }, "3000");
+    } else {
+        console.log('yellow wins')
+        for (let i = 0; i < 4; i++) {
+            s[i].children[0].innerHTML = i + 1
+        }
+        setTimeout(() => {
+            // modal.innerHTML = 'Yellow wins'
+            modal.style.backgroundColor = 'yellow'
+            winnerText.textContent = 'Yellow Wins!'
+            modal.showModal()
+
+            playAgainBtn.addEventListener('click', () => {
+                modal.close()
+                clearBoard()
+            })
+            // console.log("Delayed for 1 second.");
         }, "3000");
     }
+}
+
+function clearBoard() {
+    const discs = document.querySelectorAll('.disc')
+    discs.forEach(disc => disc.remove())
+    turn = 0
 }
 
 initBoard()
