@@ -247,9 +247,51 @@ input, textarea{
     background-color: white;
 }
 
-.contact-container {
+
+
+.skills-container-main{
     min-height: 100vh;
     background-color: rgb(73, 158, 116);
+    text-align: center;
+}
+
+.skills-title{
+    padding-top: 6vh;
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.skills-container{
+    margin-top: 5vh;
+    margin-right: 8vw;
+    margin-left: 8vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 8vh;
+}
+
+.skills-image{
+    height: 10rem;
+    width: 12rem;
+}
+
+.logo-title{
+    font-size: 2rem;
+}
+
+.skills-fig {
+    box-sizing: border-box;
+}
+
+.skills-fig:last-child {
+    margin-right: 0;
+}
+
+
+.contact-container {
+    min-height: 100vh;
+    /* background-color: rgb(73, 158, 116); */
+    background-image: url(images/contact.jpg);
     display: flex;
     /* justify-content: center; */
     text-align: center;
@@ -294,8 +336,8 @@ textarea {
 }
 
 .submit {
-    height: 2rem;
-    width: 4rem;
+    height: 3rem;
+    width: 6rem;
 }
 
 /* .submit{
@@ -320,6 +362,10 @@ textarea {
     .project-item {
         width: 50%; /* Adjust the width for smaller screens */
         margin-bottom: 20px; /* Add some space between items */
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
     }
 
     .contact-message-container{
