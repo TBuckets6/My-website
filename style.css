@@ -81,7 +81,7 @@ nav a:hover {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    min-height: 100vh;
+    min-height: 90vh;
     justify-content: center;
     display: grid;
     grid-template-rows: auto auto;
@@ -131,7 +131,7 @@ nav a:hover {
 /* -------------------Project section code ------------------ */
 
 .project-container-main {
-    min-height: 100vh;
+    min-height: 90vh;
     text-align: center;
 }
 
@@ -253,6 +253,7 @@ input, textarea{
     min-height: 100vh;
     background-color: rgb(73, 158, 116);
     text-align: center;
+    padding-bottom: 15vh;
 }
 
 .skills-title{
@@ -289,7 +290,8 @@ input, textarea{
 
 
 .contact-container {
-    min-height: 100vh;
+    min-height: 90vh;
+    /* min-height: 100vh; */
     /* background-color: rgb(73, 158, 116); */
     background-image: url(images/contact.jpg);
     display: flex;
@@ -399,4 +401,11 @@ textarea {
     nav li{
         padding: .25rem;
     }
+
+    li a{
+        padding-right: .25vw;
+        padding-left: .25vw;
+        /* padding-left: 0; */
+    }
+
 }
