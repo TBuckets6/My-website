@@ -9,7 +9,8 @@ html {
 }
 
 body {
-    min-height: 90vh;/*  */
+    min-height: 90vh;
+    /*  */
     display: flex;
     flex-direction: column;
 }
@@ -61,6 +62,35 @@ nav li {
 nav li:first-child {
     /* Add margin between Taylor and the rest of the links */
     margin-right: 3rem;
+}
+
+.taylor-li {
+    padding-top: .5rem;
+    /* padding-bottom: 0; */
+}
+
+.taylor-link {
+    font-size: 2rem;
+}
+
+.toggle {
+    position: absolute;
+    top: .4rem;
+    right: 2rem;
+    display: none;
+    /* justify-content: space-between; */
+    width: 30px;
+    height: 30px;
+    align-items: center;
+}
+
+.bar {
+    height: 5px;
+    margin-bottom: 2px;
+    width: 25px;
+    background-color: white;
+    border-radius: 5px;
+    display: block;
 }
 
 nav a {
@@ -156,7 +186,7 @@ nav a:hover {
     text-align: center;
 }
 
-.project-img{
+.project-img {
     height: 15rem;
     width: 20rem;
 }
@@ -204,7 +234,7 @@ dialog::backdrop {
 }
 */
 
-dialog{
+dialog {
     z-index: 2;
     margin: auto;
     height: 90vh;
@@ -215,11 +245,11 @@ dialog::backdrop {
     background-color: hsla(197, 3%, 50%, 0.5);
 }
 
-.modal-class{
+.modal-class {
     overflow-y: auto;
 }
 
-.modal-keyfeatures{
+.modal-keyfeatures {
     padding-left: 5rem;
     padding-right: 5rem;
     line-height: 1.5rem;
@@ -235,34 +265,35 @@ dialog::backdrop {
     cursor: pointer;
 }
 
-.seamcarver-link-title{
+.seamcarver-link-title {
     font-size: 1.25rem;
 }
 
-.seamcarver-link{
+.seamcarver-link {
     font-size: 1.25rem;
 }
 
-input, textarea{
+input,
+textarea {
     background-color: white;
 }
 
 
 
-.skills-container-main{
+.skills-container-main {
     min-height: 100vh;
     background-color: rgb(73, 158, 116);
     text-align: center;
     padding-bottom: 15vh;
 }
 
-.skills-title{
+.skills-title {
     padding-top: 6vh;
     font-size: 4rem;
     font-weight: 400;
 }
 
-.skills-container{
+.skills-container {
     margin-top: 5vh;
     margin-right: 8vw;
     margin-left: 8vw;
@@ -271,12 +302,12 @@ input, textarea{
     row-gap: 8vh;
 }
 
-.skills-image{
+.skills-image {
     height: 10rem;
     width: 12rem;
 }
 
-.logo-title{
+.logo-title {
     font-size: 2rem;
 }
 
@@ -356,31 +387,120 @@ textarea {
 */
 
 @media screen and (max-width: 768px) {
+
+
+    /* nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 70px;
+    }
+
+    nav.show{
+        padding-top: 0;
+        margin-top: 0;
+        display: flex;
+    } */
+
+    /* nav a {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 1rem;
+    } */
+
+    .toggle {
+        display: block;
+    }
+
+     .nav-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .taylor-li{
+        margin-left: 45px;
+    }
+    /*
+    */
+    /*
+    nav ul {
+        width: 100%;
+    }
+    */
+
+    /* nav li:not(.taylor-li) {
+        text-align: center;
+    } */
+
+    ul li {
+        padding: .2rem .2rem;
+        margin: 0 0;
+    }
+
+    
+
+    /* .nav-item:not(:first-child) {
+        
+        display: flex;
+        flex-direction: column;
+    } */
+
+    /* .nav-item:not(:first-child).active {
+        display: flex;
+    } */
+    /* .navbar-links{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    } */
+
+    .nav-link{
+        display: none;
+    }
+
+    .nav-link.active{
+        display: flex;
+        /* display: none; */
+    }
+
+    .nav-link.active a{
+        padding-top: .1rem;
+        padding-bottom: .1rem;
+    }
+
+
     .project-container {
-        flex-direction: column; /* Switch to a column layout on smaller screens */
-        align-items: center; /* Center items in the column */
+        flex-direction: column;
+        align-items: center;
     }
 
     .project-item {
-        width: 50%; /* Adjust the width for smaller screens */
-        margin-bottom: 20px; /* Add some space between items */
+        width: 50%;
+        margin-bottom: 20px;
     }
 
     .skills-container {
         grid-template-columns: 1fr;
     }
 
-    .contact-message-container{
+    .contact-message-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-message-item{
+    .contact-message-item {
         margin-bottom: 0;
         padding-bottom: 0;
     }
 
-    .contact-message{
+    .contact-message {
         /* width: 100%; */
         margin-left: 0;
         margin-right: 0;
@@ -388,13 +508,13 @@ textarea {
         padding-right: 0;
     }
 
-    .submit{
+    .submit {
         margin-bottom: 20px;
         height: 3rem;
         width: 6rem;
     }
 
-    nav li:first-child {
+    /* nav li:first-child {
         margin-right: 0;
     }
     
@@ -405,7 +525,6 @@ textarea {
     li a{
         padding-right: .25vw;
         padding-left: .25vw;
-        /* padding-left: 0; */
-    }
+    } */
 
 }

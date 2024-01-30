@@ -12,11 +12,21 @@
 
     <header>
         <nav>
-            <ul>
-                <li><a href="#profile">Taylor</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-list">
+                <li class="nav-item taylor-li"><a class="taylor-link" href="#profile">Taylor Bushey</a></li>
+                <a id="toggle" class="toggle" href="#">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                    <li class="nav-item nav-link"><a href="#projects">Projects</a></li>
+                    <li class="nav-item nav-link"><a href="#skills">Skills</a></li>
+                    <li class="nav-item nav-link"><a href="#contact">Contact</a></li>
+                <!-- <div class="navbar-links">
+                    <li class="nav-item"><a href="#projects">Projects</a></li>
+                    <li class="nav-item"><a href="#skills">Skills</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
+                </div> -->
             </ul>
         </nav>
     </header>
@@ -273,6 +283,50 @@
                 <input type="submit" name="submit" id="submit" class="contact-item submit">
             </form>
         </div>
+
+        <script>
+            
+            const toggleBtn = document.getElementById('toggle')
+            const taylorLink = document.getElementsByClassName('taylor-li')[0]
+            const navbarLink1 = document.getElementsByClassName('nav-link')[0]
+            const navbarLink2 = document.getElementsByClassName('nav-link')[1]
+            const navbarLink3 = document.getElementsByClassName('nav-link')[2]
+
+
+            toggleBtn.addEventListener('click', (e) => {
+                console.log('hi')
+                e.preventDefault()
+                navbarLink1.classList.toggle('active')
+                navbarLink2.classList.toggle('active')
+                navbarLink3.classList.toggle('active')
+            })
+
+            taylorLink.addEventListener('click', () => {
+                navbarLink1.classList.toggle('active')
+                navbarLink2.classList.toggle('active')
+                navbarLink3.classList.toggle('active')
+            })
+
+            navbarLink1.addEventListener('click', () => {
+                navbarLink1.classList.toggle('active')
+                navbarLink2.classList.toggle('active')
+                navbarLink3.classList.toggle('active')
+            })
+
+            navbarLink2.addEventListener('click', () => {
+                navbarLink1.classList.toggle('active')
+                navbarLink2.classList.toggle('active')
+                navbarLink3.classList.toggle('active')
+            })
+
+            navbarLink3.addEventListener('click', () => {
+                navbarLink1.classList.toggle('active')
+                navbarLink2.classList.toggle('active')
+                navbarLink3.classList.toggle('active')
+            })
+
+
+        </script>
 
         <script src="seamCarverModal.js" type="module"></script>
         <script src="contactEmail.js" type="module"></script>
