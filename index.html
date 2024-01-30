@@ -19,9 +19,9 @@
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </a>
-                    <li class="nav-item nav-link"><a href="#projects">Projects</a></li>
-                    <li class="nav-item nav-link"><a href="#skills">Skills</a></li>
-                    <li class="nav-item nav-link"><a href="#contact">Contact</a></li>
+                <li class="nav-item nav-link"><a href="#projects">Projects</a></li>
+                <li class="nav-item nav-link"><a href="#skills">Skills</a></li>
+                <li class="nav-item nav-link"><a href="#contact">Contact</a></li>
                 <!-- <div class="navbar-links">
                     <li class="nav-item"><a href="#projects">Projects</a></li>
                     <li class="nav-item"><a href="#skills">Skills</a></li>
@@ -285,7 +285,7 @@
         </div>
 
         <script>
-            
+
             const toggleBtn = document.getElementById('toggle')
             const taylorLink = document.getElementsByClassName('taylor-li')[0]
             const navbarLink1 = document.getElementsByClassName('nav-link')[0]
@@ -294,7 +294,6 @@
 
 
             toggleBtn.addEventListener('click', (e) => {
-                console.log('hi')
                 e.preventDefault()
                 navbarLink1.classList.toggle('active')
                 navbarLink2.classList.toggle('active')
@@ -302,9 +301,12 @@
             })
 
             taylorLink.addEventListener('click', () => {
-                navbarLink1.classList.toggle('active')
-                navbarLink2.classList.toggle('active')
-                navbarLink3.classList.toggle('active')
+                if (navbarLink1.classList.contains('active')) {
+                    navbarLink1.classList.toggle('active')
+                    navbarLink2.classList.toggle('active')
+                    navbarLink3.classList.toggle('active')
+                }
+
             })
 
             navbarLink1.addEventListener('click', () => {
