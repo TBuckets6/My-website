@@ -379,10 +379,10 @@ textarea {
         margin-bottom: 20px;
     }
 
-    .project-img {
+    /* .project-img {
         height: 10rem;
         width: 30rem;
-    }
+    } */
 
     /* .project-img{
         height: 150px;
@@ -391,6 +391,11 @@ textarea {
 
     .modal-class{
         width: 90%; 
+    }
+
+    .gif{
+        height: 10rem;
+        /* width: 80rem; */
     }
 
     .skills-container {
