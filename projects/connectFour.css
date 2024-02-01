@@ -15,12 +15,13 @@ body {
     max-width: 600px; /* ------------------------------*/
     align-items: center;
     justify-content: center;
+    margin-top: 1rem;
     margin-bottom: 5rem;
 }
 
 .player-turn-text{
     font-size: 3rem;
-    /* font-size: 3vw; -------------- */
+    /* font-size: 3vw; */
     padding: 0;
     margin-bottom: 1rem;
     font-weight: bolder;
@@ -42,8 +43,8 @@ body {
     /* gap: 2vw; ------------------- */
     justify-content: center;
     border: 1px solid rgb(0, 153, 255);
-    padding: 1rem 3rem;
-    /* padding: 2vw; --------------------- */
+    /* padding: 1rem 3rem; */
+    padding: 2vw;
 }
 
 .slot {
@@ -73,7 +74,7 @@ body {
     justify-content: center;
 }
 
-dialog {
+/* dialog {
     z-index: 2;
     margin: auto;
     height: 24vh;
@@ -82,27 +83,55 @@ dialog {
     text-align: center;
     font-size: 2rem;
     font-weight: bolder;
-}
+} */
 
 dialog::backdrop {
     background-color: hsla(197, 3%, 50%, 0.5);
 }
 
+/* .modal-div{
+    width: 100%;
+    height: auto;
+} */
+
 .modal-class {
     overflow-y: auto;
+    z-index: 2;
+    margin: auto;
+    width: 20vw;
+    min-width: 20vw;
+    height: 25vh;
+    border-radius: 5%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+
+
+
+    /* width: 30vw; */
+    /* height: 30vh; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 .play-again {
     z-index: 2;
-    width: 10vw;
-    height: 10vh;
+    width: 30;
+    min-width: 30%;
+    height: 30%;
+    /* width: 10vw; */
+    /* min-width: 10vw;
+    height: 10vh; */
     cursor: pointer;
 }
 
 .winner-text{
     margin:0;
     padding: 0;
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
+    padding-bottom: 2vw;
 }
 
 /* @media screen and (max-width: 768px) {
